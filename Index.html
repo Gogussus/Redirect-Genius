@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Redirect</title>
+    <script>
+        function redirectToStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.appelit.geniustravel&hl=en&pli=1";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/us/app/genius-ai-travel-assistant/id1661100442";
+            } else {
+                window.location.href = "https://yourwebsite.com"; // Optional fallback URL
+            }
+        }
+    </script>
+</head>
+<body onload="redirectToStore()">
+    <p>Redirecting to the appropriate app store...</p>
+</body>
+</html>
